@@ -16,22 +16,16 @@ $password = '9vBmuhfEo7H606xBrA5leyqVazXB3x4k';
 $gotoUrl = "http://localhost:45632";
 
 $loggedin = 'no';
-try {
-    $db = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $con = $db; // for nolanwhy cause i always fucking forget its madblox and not my site
-    $conn = $db;
-    /* include "EasyPHP.php";
-    $db = new EasyPHP();
-    $db->ConnectDatabase($host, $dbname, $username, $password);
-$con = $db;
-$conn = $db; */
 
+$db = mysqli_connect($host,$username,$password);
+$con = $db; // for nolanwhy cause i always fucking forget its madblox and not my site
+$conn = $db;
 
-
-} catch (PDOException $e) {
-    echo "db connection failed: " . $e->getMessage();
+if(mysqli_errno($db)) {
+    exit(mysqli_errno($db));
 }
+
+mysqli_select_db($db,$dbname);
 
 $sitename = "MADBLOX";
 // $sitename = '<img style="width:100px;height:35px;" src="https://media.discordapp.net/attachments/1203465620255936552/1206294994084700210/IMG_2365.png?ex=65db7cc2&is=65c907c2&hm=5f1301ec56854881288dde493c98cd27cb425952261d86437762734fd526c517&=&format=png&quality=lossless">';
@@ -53,9 +47,8 @@ $_RENDERSERVER = $q->fetch();
 $testing = "false"; //testing mode 2.0 if its enabled it turns off games (made by dude)
 $securitydown = "false"; // i recommend turing this on when site got an security attack or regular security maintenance (made by dude)
 
-$stmt = $db->prepare("SELECT * FROM global WHERE id = ?");
-$stmt->execute([1]);
-$_GLOBAL = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt = mysqli_query($conn,"SELECT * FROM `global` WHERE `id` = 1");
+$_GLOBAL = mysqli_fetch_assoc($stmt);
 
 $_THEMECSS = "";
 
