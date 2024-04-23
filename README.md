@@ -1,2 +1,2 @@
-# UnderageNeoNaziSQLInjectionSeriousVulnsDepricatedFunctionMySQLiShitfestBloxium
+# UnderageNeoNaziSQLInjectionVulnerabilityShitfestBloxium
 MADBLOX now made 169% better
