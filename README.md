@@ -1,2 +1,2 @@
 # UnderageNeoNaziSQLInjectionVulnerabilityShitfestBloxium
-## MySQLi Rewrite for MADBLOX
+**MySQLi Rewrite for MADBLOX**
