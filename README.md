@@ -1,2 +1,2 @@
 # UnderageNeoNaziSQLInjectionVulnerabilityShitfestBloxium
-MADBLOX now made 169% better
+## MySQLi Rewrite for MADBLOX
