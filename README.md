@@ -1,1 +1,1 @@
-# SQLInjectionBloxium
+# NeoNaziSQLInjectionBloxium
